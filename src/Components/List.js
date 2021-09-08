@@ -5,7 +5,7 @@ class List extends Component {
     render() {
       return (
         <ol>
-          {this.props.tasks.map((task,index) => <li key={index}>{task}</li>)}
+          {this.props.tasks.map((task,index) => <li key={index}>{task} + hi there </li>)}
         </ol>
       )
     }

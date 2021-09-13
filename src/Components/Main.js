@@ -1,4 +1,4 @@
-import React,{Component} from 'react'
+import React from 'react'
 import Title from './Title'
 import PhotoWall from './PhotoWall'
 
@@ -19,18 +19,15 @@ const posts = [{
  
 
 
-class Main extends Component {
-    render(){
-      return(
-        <div>
-          <Title todos={"Photowall"} />
-          <PhotoWall posts={posts}/>
-          
-          
-        </div>
-  
-      )
-    }
+  function Main(){
+    return(
+      <div>
+        <Title todos={"Photowall"} />
+        <PhotoWall posts={posts}/>
+      </div>
+    )
   }
+
+
 
   export default Main

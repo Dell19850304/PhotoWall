@@ -37,6 +37,12 @@ import {Route} from 'react-router-dom'
       }))
     }
 
+    addPhoto(postSubmitted){
+      this.setState((state) => ({
+        posts: state.posts.concat([postSubmitted])
+      }))
+    }
+
     
     render(){
       return(
@@ -49,7 +55,14 @@ import {Route} from 'react-router-dom'
             </div>
             ) } />
  
-          <Route path = "/AddPhoto" component = {AddPhoto} />
+          <Route path = "/AddPhoto" render =  {({history}) => (
+            <AddPhoto onAddPhoto={(addedPost) => {
+              console.log(addedPost)
+                this.addPhoto(addedPost)
+                history.push('/')
+
+            }}  />
+          )} />
         
 
         </div>
